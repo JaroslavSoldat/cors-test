@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Creatio CORS</title>
+</head>
+<body>
+<h2>XIXOIO CORS error Test POST</h2>
+<script>
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://pre-xixoio.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData");
+
+  xhr.setRequestHeader("Content-Type", "application/json; odata=verbose; IEEE754Compatible=true");
+  xhr.setRequestHeader("Accept", "application/json; odata=verbose");
+  xhr.setRequestHeader("BPMCSRF", "OpK/NuJJ1w/SQxmPvwNvfO");
+
+  // ???
+  // xhr.setRequestHeader("Referer", "https://moje.xixoio.com/");
+  // xhr.setRequestHeader("User-Agent", "Mozilla/5.1 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36");
+
+  xhr.onload = () => console.log(xhr.responseText);
+
+  const data = null;
+
+  xhr.send(data);
+  console.log('Request sent.');
+</script>
+</body>
+</html>
